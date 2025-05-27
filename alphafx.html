@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaFX Invest - Your Partner in Forex Trading</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        
+         :root {
+            --primary-color: #0A2647;
+            /* Deep Navy Blue */
+            --secondary-color: #144272;
+            /* Medium Blue */
+            --accent-color: #205295;
+            /* Lighter Blue */
+            --highlight-color: #2C74B3;
+            /* Bright Blue for CTAs */
+            --gold-accent: #B08D57;
+            /* Gold for premium feel */
+            --text-color: #333;
+            --light-text-color: #f8f9fa;
+            --bg-color: #FFFFFF;
+            --light-bg-color: #f8f9fa;
+            --border-color: #e0e0e0;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --font-primary: 'Roboto', sans-serif;
+            --font-secondary: 'Open Sans', sans-serif;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --box-shadow-darker: 0 8px 25px rgba(0, 0, 0, 0.15);
+            --border-radius: 8px;
+            --transition-speed: 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            font-size: 16px;
+            overflow-x: hidden;
+            /* Prevent horizontal scroll */
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-secondary);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--gold-accent);
+            margin: 0.75rem auto 0;
+            border-radius: 2px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+        }
+        
+        h4 {
+            font-size: 1.4rem;
+            color: var(--accent-color);
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #555;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--highlight-color);
+            transition: color var(--transition-speed);
+            cursor: pointer;
+        }
+        
+        a:hover {
+            color: var(--gold-accent);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--border-radius);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--highlight-color);
+            color: var(--light-text-color);
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: var(--light-text-color);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(44, 116, 179, 0.4);
+        }
+        
+        .btn-gold {
+            background-color: var(--gold-accent);
+        }
+        
+        .btn-gold:hover {
+            background-color: #a07c47;
+            /* Darker gold */
+            box-shadow: 0 4px 10px rgba(176, 141, 87, 0.4);
+        }
+        
+        .btn-sm {
+            /* For header buttons */
+            padding: 8px 18px !important;
+            font-size: 0.9rem !important;
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .bg-light {
+            background-color: var(--light-bg-color);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        /* Header */
+        
+        .main-header {
+            background-color: var(--bg-color);
+            box-shadow: var(--box-shadow);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+        
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-family: var(--font-secondary);
+        }
+        
+        .logo i {
+            color: var(--gold-accent);
+            margin-right: 8px;
+        }
+        
+        .main-nav ul {
+            display: flex;
+        }
+        
+        .main-nav ul li {
+            margin-left: 1.8rem;
+        }
+        
+        .main-nav ul li a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-color);
+            padding-bottom: 8px;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .main-nav ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--gold-accent);
+            transition: width var(--transition-speed);
+        }
+        
+        .main-nav ul li a.active::before,
+        .main-nav ul li a:hover::before {
+            width: 100%;
+        }
+        
+        .main-nav ul li a.active {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .header-actions {
+            display: flex;
+            /* Ensure buttons are in a row */
+            align-items: center;
+        }
+        
+        .header-actions .btn {
+            margin-left: 1rem;
+        }
+        /* Page Section Management */
+        
+        .page-section {
+            display: none;
+        }
+        
+        .page-section.active {
+            display: block;
+            animation: fadeInPage 0.6s ease-in-out;
+        }
+        
+        @keyframes fadeInPage {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Hero Section (Homepage) */
+        
+        .hero {
+            height: 90vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(10, 38, 71, 0.75), rgba(10, 38, 71, 0.75)), url('https://images.unsplash.com/photo-1642790294286-70790005b17b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Zm9yZXglMjB0cmFkaW5nJTIwY2hhcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light-text-color);
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--light-text-color);
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            color: #e0e0e0;
+        }
+        
+        .hero-content .btn {
+            margin: 0.5rem;
+        }
+        /* Info Boxes / Services Overview */
+        
+        .info-boxes-section {
+            padding: 60px 0;
+            background-color: var(--light-bg-color);
+        }
+        
+        .info-box-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .info-box {
+            background-color: var(--bg-color);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+        
+        .info-box:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-darker);
+        }
+        
+        .info-box i {
+            font-size: 3rem;
+            color: var(--gold-accent);
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+        }
+        /* Why Choose Us Section */
+        
+        .why-choose-us-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+        }
+        
+        .why-choose-us-item i {
+            font-size: 2.5rem;
+            color: var(--gold-accent);
+            margin-top: 5px;
+            width: 50px;
+            text-align: center;
+        }
+        
+        .why-choose-us-item div h4 {
+            margin-bottom: 0.5rem;
+        }
+        /* Market Insights Section */
+        
+        .market-card {
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+        
+        .market-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .market-card-content {
+            padding: 1.5rem;
+        }
+        
+        .market-card-content h4 {
+            color: var(--primary-color);
+        }
+        
+        .market-card-content .date {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 0.5rem;
+        }
+        /* Call to Action Section */
+        
+        .cta-section {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            color: var(--light-text-color);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            color: var(--light-text-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section h2::after {
+            background-color: var(--gold-accent);
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #e0e0e0;
+        }
+        /* Footer */
+        
+        .main-footer {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h5 {
+            color: var(--gold-accent);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+        }
+        
+        .footer-column p,
+        .footer-column ul li a,
+        .footer-column ul li {
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--gold-accent);
+            padding-left: 5px;
+        }
+        
+        .footer-column .social-links a {
+            display: inline-block;
+            color: #ccc;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            transition: color var(--transition-speed), transform var(--transition-speed);
+        }
+        
+        .footer-column .social-links a:hover {
+            color: var(--gold-accent);
+            transform: scale(1.1);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--accent-color);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        .risk-disclaimer {
+            font-size: 0.8rem;
+            color: #aaa;
+            margin-top: 1rem;
+            text-align: justify;
+        }
+        /* Generic Page Header for sub-pages */
+        
+        .page-header-section {
+            background: linear-gradient(rgba(10, 38, 71, 0.8), rgba(20, 66, 114, 0.8)), url('https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZmluYW5jZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            padding: 100px 0;
+            text-align: center;
+            color: var(--light-text-color);
+        }
+        
+        .page-header-section h1 {
+            color: var(--light-text-color);
+            font-size: 3rem;
+        }
+        
+        .page-header-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #e0e0e0;
+        }
+        /* Auth Forms (Login/Register) */
+        
+        .auth-form-container {
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 2.5rem;
+            background-color: var(--bg-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-darker);
+        }
+        
+        .auth-form-container h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .auth-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .auth-form .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .auth-form .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: var(--font-primary);
+        }
+        
+        .auth-form .btn {
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        .auth-form .form-text {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .auth-form .form-text a {
+            font-weight: 600;
+        }
+        /* About Us Page */
+        
+        .about-content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .team-member {
+            text-align: center;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 4px solid var(--gold-accent);
+        }
+        
+        .team-member h4 {
+            margin-bottom: 0.2rem;
+            color: var(--primary-color);
+        }
+        
+        .team-member .role {
+            color: var(--accent-color);
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+        /* Services Page */
+        
+        .service-item {
+            background-color: #fff;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border-left: 5px solid var(--gold-accent);
+        }
+        
+        .service-item h3 {
+            margin-top: 0;
+        }
+        
+        .service-item ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        
+        .service-item ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .account-types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .account-type-card {
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            background-color: #fff;
+        }
+        
+        .account-type-card h4 {
+            color: var(--gold-accent);
+        }
+        
+        .account-type-card .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+        
+        .account-type-card ul {
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+        /* Education Page */
+        
+        .resource-card {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 1.5rem;
+        }
+        
+        .resource-card h4 {
+            color: var(--primary-color);
+        }
+        /* Contact Page */
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* Adjusted for better balance */
+            gap: 3rem;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info-item i {
+            font-size: 1.8rem;
+            color: var(--gold-accent);
+            margin-right: 1.5rem;
+            width: 40px;
+            text-align: center;
+            margin-top: 5px;
+        }
+        
+        .contact-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-form .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .contact-form .form-group input,
+        .contact-form .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: var(--font-primary);
+        }
+        
+        .contact-form .form-group textarea {
+            min-height: 150px;
+        }
+        
+        .map-container {
+            height: 400px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-top: 2rem;
+            background-color: #e9e9e9;
+            /* Placeholder color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            .about-content-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+                margin-top: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .main-nav {
+                position: absolute;
+                top: 100%;
+                /* Position below header */
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-color);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                flex-direction: column;
+                display: none;
+                padding-bottom: 1rem;
+                border-top: 1px solid var(--border-color);
+            }
+            .main-nav.active {
+                display: flex;
+            }
+            .main-nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+            .main-nav ul li {
+                margin: 0;
+            }
+            .main-nav ul li a {
+                display: block;
+                padding: 1rem 1.5rem;
+                border-bottom: 1px solid #eee;
+            }
+            .main-nav ul li a::before {
+                display: none;
+            }
+            .header-actions {
+                margin-left: auto;
+            }
+            /* Push buttons to right */
+            .header-actions .btn {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            .page-header-section h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                font-size: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .btn {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+            .search-bar {
+                padding: 15px;
+            }
+            /* If search bar was present */
+            .auth-form-container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container">
+            <a href="#" data-targetpage="home-section" class="logo nav-link"><i class="fas fa-chart-line"></i> AlphaFX</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" data-targetpage="home-section" class="nav-link active">Home</a></li>
+                    <li><a href="#" data-targetpage="about-section" class="nav-link">About Us</a></li>
+                    <li><a href="#" data-targetpage="services-section" class="nav-link">Services</a></li>
+                    <li><a href="#" data-targetpage="education-section" class="nav-link">Education</a></li>
+                    <li><a href="#" data-targetpage="contact-section" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" data-targetpage="login-section" class="nav-link btn btn-sm">Login</a>
+                <a href="#" data-targetpage="register-section" class="nav-link btn btn-sm btn-gold">Open Account</a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle Navigation Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="home-section" class="page-section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Unlock Your Financial Potential with Forex Trading</h1>
+                    <p>AlphaFX Invest provides cutting-edge platforms, expert insights, and dedicated support to help you navigate the global currency markets.</p>
+                    <a href="#" data-targetpage="services-section" class="btn btn-gold nav-link">Explore Our Services</a>
+                    <a href="#" data-targetpage="register-section" class="btn nav-link">Open Live Account</a>
+                </div>
+            </div>
+
+            <section class="info-boxes-section">
+                <div class="container">
+                    <div class="info-box-grid">
+                        <div class="info-box">
+                            <i class="fas fa-cogs"></i>
+                            <h4>Advanced Platforms</h4>
+                            <p>Trade on industry-leading platforms like MT4 & MT5 with powerful tools and analytics.</p>
+                        </div>
+                        <div class="info-box">
+                            <i class="fas fa-user-tie"></i>
+                            <h4>Expert Support</h4>
+                            <p>Our dedicated team is available 24/5 to assist you with any queries or technical issues.</p>
+                        </div>
+                        <div class="info-box">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>Educational Resources</h4>
+                            <p>Access a wealth of learning materials to enhance your trading knowledge and skills.</p>
+                        </div>
+                        <div class="info-box">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Secure & Regulated</h4>
+                            <p>Your funds are protected with top-tier security measures and regulatory oversight.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="why-choose-us section-padding">
+                <div class="container">
+                    <h2>Why Choose AlphaFX Invest?</h2>
+                    <div class="why-choose-us-item">
+                        <i class="fas fa-bullseye"></i>
+                        <div>
+                            <h4>Precision Trading Tools</h4>
+                            <p>Utilize advanced charting, technical indicators, and automated trading options to refine your strategies and execute trades with precision.</p>
+                        </div>
+                    </div>
+                    <div class="why-choose-us-item">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <h4>Global Market Access</h4>
+                            <p>Gain access to a wide range of currency pairs, commodities, and indices from major financial markets around the world, 24 hours a day.</p>
+                        </div>
+                    </div>
+                    <div class="why-choose-us-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                            <h4>Tailored Investment Solutions</h4>
+                            <p>Whether you're a beginner or an experienced trader, we offer diverse account types and personalized guidance to match your investment goals and risk appetite.</p>
+                        </div>
+                    </div>
+                    <div class="why-choose-us-item">
+                        <i class="fas fa-lock"></i>
+                        <div>
+                            <h4>Robust Security Protocols</h4>
+                            <p>We employ state-of-the-art security measures, including segregated client accounts and SSL encryption, to ensure the safety of your funds and personal data.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="market-insights section-padding bg-light">
+                <div class="container">
+                    <h2>Latest Market Insights</h2>
+                    <div class="info-box-grid">
+                        <div class="market-card">
+                            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RvY2slMjBtYXJrZXQlMjBjaGFydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Market Analysis">
+                            <div class="market-card-content">
+                                <h4>Weekly Forex Outlook</h4>
+                                <p class="date"><i class="far fa-calendar-alt"></i> May 27, 2025</p>
+                                <p>Key currency pairs to watch this week and potential market-moving events. Our experts break down the technical and fundamental factors.</p>
+                                <a href="#" class="btn btn-sm">Read More</a>
+                            </div>
+                        </div>
+                        <div class="market-card">
+                            <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZmluYW5jaWFsJTIwbmV3c3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Economic News">
+                            <div class="market-card-content">
+                                <h4>Impact of Central Bank Policies</h4>
+                                <p class="date"><i class="far fa-calendar-alt"></i> May 26, 2025</p>
+                                <p>Understanding how recent announcements from the ECB and Federal Reserve might influence market volatility and trading opportunities.</p>
+                                <a href="#" class="btn btn-sm">Read More</a>
+                            </div>
+                        </div>
+                        <div class="market-card">
+                            <img src="https://images.unsplash.com/photo-1639754393118-ead52797d259?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNyeXB0byUyMGZvcmV4fGVufDB8fDB8fHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Trading Strategy">
+                            <div class="market-card-content">
+                                <h4>Developing a Risk Management Strategy</h4>
+                                <p class="date"><i class="far fa-calendar-alt"></i> May 25, 2025</p>
+                                <p>Essential tips for traders of all levels on how to protect capital and manage risk effectively in the dynamic Forex market.</p>
+                                <a href="#" class="btn btn-sm">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-section">
+                <div class="container">
+                    <h2>Ready to Start Your Trading Journey?</h2>
+                    <p>Join thousands of traders who trust AlphaFX Invest. Open an account today and gain access to global markets with competitive conditions.</p>
+                    <a href="#" data-targetpage="register-section" class="btn btn-gold nav-link">Open a Live Account</a>
+                    <a href="#" class="btn" style="background-color: var(--light-text-color); color: var(--primary-color);">Try a Demo Account</a>
+                </div>
+            </section>
+        </section>
+
+        <section id="about-section" class="page-section">
+            <div class="page-header-section">
+                <div class="container">
+                    <h1>About AlphaFX Invest</h1>
+                    <p>Your trusted partner in navigating the complexities of the Forex market with integrity and expertise.</p>
+                </div>
+            </div>
+            <section class="about-content section-padding">
+                <div class="container">
+                    <div class="about-content-grid">
+                        <div>
+                            <h3>Our Mission & Vision</h3>
+                            <p><strong>Mission:</strong> To empower individuals and institutions with the tools, knowledge, and support needed to achieve their financial goals through Forex and CFD trading. We are committed to providing a transparent, secure,
+                                and innovative trading environment.</p>
+                            <p><strong>Vision:</strong> To be a globally recognized leader in the online trading industry, renowned for our client-centric approach, technological excellence, and unwavering commitment to ethical practices. We aim to foster
+                                a community of successful traders through continuous education and superior service.</p>
+                            <h3>Our Core Values</h3>
+                            <ul>
+                                <li><i class="fas fa-check-circle text-success"></i> Integrity & Transparency</li>
+                                <li><i class="fas fa-check-circle text-success"></i> Client Focus</li>
+                                <li><i class="fas fa-check-circle text-success"></i> Innovation & Excellence</li>
+                                <li><i class="fas fa-check-circle text-success"></i> Education & Empowerment</li>
+                                <li><i class="fas fa-check-circle text-success"></i> Regulatory Compliance</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YnVzaW5lc3MlMjB0ZWFtJTIwbWVldGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=80" alt="AlphaFX Team Meeting">
+                        </div>
+                    </div>
+
+                    <h2 style="margin-top: 4rem;">Meet Our Leadership (Conceptual)</h2>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YnVzaW5lc3NtYW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=200&q=60" alt="CEO">
+                            <h4>Johnathan K. Sterling</h4>
+                            <p class="role">Chief Executive Officer</p>
+                            <p>With over 20 years in financial markets, Johnathan leads AlphaFX with a vision for innovation and client success.</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnVzaW5lc3N3b21hbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=200&q=60" alt="COO">
+                            <h4>Dr. Evelyn Reed</h4>
+                            <p class="role">Chief Operating Officer</p>
+                            <p>Evelyn ensures operational excellence and strategic alignment across all departments.</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJ1c2luZXNzJTIwbWFuYWdlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=200&q=60" alt="CTO">
+                            <h4>Marcus Chen</h4>
+                            <p class="role">Chief Technology Officer</p>
+                            <p>Marcus drives our technological advancements, ensuring robust and cutting-edge trading platforms.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section id="services-section" class="page-section">
+            <div class="page-header-section">
+                <div class="container">
+                    <h1>Our Forex Trading Services</h1>
+                    <p>Comprehensive solutions designed to cater to the diverse needs of modern Forex traders.</p>
+                </div>
+            </div>
+            <section class="services-content section-padding">
+                <div class="container">
+                    <div class="service-item">
+                        <h3>Forex Trading Accounts</h3>
+                        <p>AlphaFX Invest offers a variety of account types to suit your trading style, experience level, and investment capital. All accounts provide access to deep liquidity, competitive spreads, and fast execution.</p>
+                        <h4>Key Features Across All Accounts:</h4>
+                        <ul>
+                            <li>Access to 50+ currency pairs, including majors, minors, and exotics.</li>
+                            <li>Leverage options up to 1:500 (subject to regional regulations and client status).</li>
+                            <li>Advanced trading platforms: MetaTrader 4 (MT4) and MetaTrader 5 (MT5).</li>
+                            <li>Expert Advisors (EAs) and algorithmic trading supported.</li>
+                            <li>Mobile trading apps for iOS and Android.</li>
+                            <li>Negative balance protection.</li>
+                            <li>Dedicated customer support 24/5.</li>
+                        </ul>
+                    </div>
+
+                    <h2 style="text-align:left; margin-bottom: 2rem;">Account Types</h2>
+                    <div class="account-types-grid">
+                        <div class="account-type-card">
+                            <i class="fas fa-user" style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+                            <h4>Standard Account</h4>
+                            <p class="price">Min. Deposit: $100</p>
+                            <ul>
+                                <li>Spreads from 1.0 pip</li>
+                                <li>No commission</li>
+                                <li>Ideal for beginners and regular traders</li>
+                                <li>Full access to educational resources</li>
+                            </ul>
+                            <a href="#" data-targetpage="register-section" class="btn btn-gold nav-link">Open Standard</a>
+                        </div>
+                        <div class="account-type-card">
+                            <i class="fas fa-rocket" style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+                            <h4>Pro ECN Account</h4>
+                            <p class="price">Min. Deposit: $1000</p>
+                            <ul>
+                                <li>Raw ECN spreads from 0.0 pips</li>
+                                <li>Low commission per lot</li>
+                                <li>Suitable for experienced traders & scalpers</li>
+                                <li>Direct market access (DMA)</li>
+                            </ul>
+                            <a href="#" data-targetpage="register-section" class="btn btn-gold nav-link">Open Pro ECN</a>
+                        </div>
+                        <div class="account-type-card">
+                            <i class="fas fa-crown" style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+                            <h4>VIP Account</h4>
+                            <p class="price">Min. Deposit: $10,000</p>
+                            <ul>
+                                <li>Ultra-tight spreads</li>
+                                <li>Customizable commission structure</li>
+                                <li>Personal account manager</li>
+                                <li>Exclusive market insights & analytics</li>
+                            </ul>
+                            <a href="#" data-targetpage="contact-section" class="btn btn-gold nav-link">Inquire for VIP</a>
+                        </div>
+                    </div>
+
+                    <div class="service-item" style="margin-top: 3rem;">
+                        <h3>Trading Platforms</h3>
+                        <p>We provide access to the world's most popular and reliable trading platforms:</p>
+                        <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1rem;">
+                            <div style="flex: 1; min-width: 250px; text-align: center;">
+                                <img src="https://placehold.co/300x150/0A2647/FFFFFF?text=MetaTrader+4" alt="MetaTrader 4" style="margin-bottom: 1rem;">
+                                <h4>MetaTrader 4 (MT4)</h4>
+                                <p>The global standard for Forex trading, known for its user-friendly interface, advanced charting tools, and support for automated trading via Expert Advisors.</p>
+                            </div>
+                            <div style="flex: 1; min-width: 250px; text-align: center;">
+                                <img src="https://placehold.co/300x150/144272/FFFFFF?text=MetaTrader+5" alt="MetaTrader 5" style="margin-bottom: 1rem;">
+                                <h4>MetaTrader 5 (MT5)</h4>
+                                <p>The next-generation platform offering more timeframes, technical indicators, order types, and access to a wider range of financial instruments including stocks and futures.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <h3>Additional Services</h3>
+                        <ul>
+                            <li><strong>CFD Trading:</strong> Diversify your portfolio with Contracts for Difference on indices, commodities, and cryptocurrencies.</li>
+                            <li><strong>PAMM/MAM Accounts:</strong> Solutions for money managers and investors looking for managed account services.</li>
+                            <li><strong>VPS Hosting:</strong> Ensure uninterrupted trading with our reliable Virtual Private Server solutions for EAs.</li>
+                            <li><strong>API Trading:</strong> For institutional clients and advanced algorithmic traders requiring custom integrations.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section id="education-section" class="page-section">
+            <div class="page-header-section">
+                <div class="container">
+                    <h1>Forex Education & Resources</h1>
+                    <p>Empowering you with the knowledge and tools to trade confidently and effectively.</p>
+                </div>
+            </div>
+            <section class="education-content section-padding">
+                <div class="container">
+                    <p class="text-center" style="font-size: 1.2rem; margin-bottom: 3rem;">Whether you are new to Forex or an experienced trader, our comprehensive educational resources are designed to help you enhance your skills and understanding of the markets.</p>
+
+                    <div class="info-box-grid">
+                        <div class="resource-card">
+                            <i class="fas fa-book-open" style="font-size: 2rem; color: var(--gold-accent); margin-bottom: 1rem;"></i>
+                            <h4>Forex Trading Basics</h4>
+                            <p>Learn the fundamentals: What is Forex? How does it work? Key terminologies (pips, lots, leverage), and understanding currency pairs.</p>
+                            <a href="#" class="btn btn-sm">Start Learning</a>
+                        </div>
+                        <div class="resource-card">
+                            <i class="fas fa-chart-pie" style="font-size: 2rem; color: var(--gold-accent); margin-bottom: 1rem;"></i>
+                            <h4>Technical Analysis</h4>
+                            <p>Master chart patterns, indicators (MACD, RSI, Moving Averages), support & resistance levels, and Fibonacci retracements to identify trading opportunities.</p>
+                            <a href="#" class="btn btn-sm">Explore TA</a>
+                        </div>
+                        <div class="resource-card">
+                            <i class="far fa-newspaper" style="font-size: 2rem; color: var(--gold-accent); margin-bottom: 1rem;"></i>
+                            <h4>Fundamental Analysis</h4>
+                            <p>Understand how economic data releases, central bank policies, geopolitical events, and market sentiment impact currency movements.</p>
+                            <a href="#" class="btn btn-sm">Learn FA</a>
+                        </div>
+                        <div class="resource-card">
+                            <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--gold-accent); margin-bottom: 1rem;"></i>
+                            <h4>Risk Management</h4>
+                            <p>Crucial strategies for protecting your capital, including setting stop-loss orders, position sizing, and understanding risk-reward ratios.</p>
+                            <a href="#" class="btn btn-sm">Manage Risk</a>
+                        </div>
+                        <div class="resource-card">
+                            <i class="fas fa-brain" style="font-size: 2rem; color: var(--gold-accent); margin-bottom: 1rem;"></i>
+                            <h4>Trading Psychology</h4>
+                            <p>Develop the right mindset for trading. Learn to control emotions like fear and greed, maintain discipline, and stick to your trading plan.</p>
+                            <a href="#" class="btn btn-sm">Master Psychology</a>
+                        </div>
+                        <div class="resource-card">
+                            <i class="fas fa-video" style="font-size: 2rem; color: var(--gold-accent); margin-bottom: 1rem;"></i>
+                            <h4>Video Tutorials & Webinars</h4>
+                            <p>Access our library of video guides and join live webinars hosted by market experts covering a wide range of trading topics. (Conceptual)</p>
+                            <a href="#" class="btn btn-sm">Watch Videos</a>
+                        </div>
+                    </div>
+                    <p class="text-center" style="margin-top: 3rem;">Our educational portal is continuously updated with new articles, guides, and market analysis. <a href="#" class="nav-link" data-targetpage="contact-section">Contact us</a> if you have specific topics you'd like to see covered!</p>
+                </div>
+            </section>
+        </section>
+
+        <section id="contact-section" class="page-section">
+            <div class="page-header-section">
+                <div class="container">
+                    <h1>Contact AlphaFX Invest</h1>
+                    <p>We are here to assist you. Reach out to our support team or visit our offices.</p>
+                </div>
+            </div>
+            <section class="contact-details section-padding">
+                <div class="container">
+                    <div class="contact-grid">
+                        <div class="contact-form-section">
+                            <h2>Send Us a Message</h2>
+                            <p>Have a question or need assistance? Fill out the form below, and one of our representatives will get back to you shortly.</p>
+                            <form class="contact-form" id="mainContactForm">
+                                <div class="form-group">
+                                    <label for="contact-name">Full Name</label>
+                                    <input type="text" id="contact-name" name="name" required placeholder="e.g., John Doe">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-email">Email Address</label>
+                                    <input type="email" id="contact-email" name="email" required placeholder="e.g., john.doe@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-phone">Phone Number (Optional)</label>
+                                    <input type="tel" id="contact-phone" name="phone" placeholder="e.g., +1 234 567 8900">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-subject">Subject</label>
+                                    <input type="text" id="contact-subject" name="subject" required placeholder="e.g., Account Inquiry">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-message">Your Message</label>
+                                    <textarea id="contact-message" name="message" rows="6" required placeholder="Please type your message here..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-gold">Send Message</button>
+                            </form>
+                        </div>
+                        <div class="contact-info-section">
+                            <h2>Our Contact Details</h2>
+                            <p>Feel free to reach out to us through any of the following channels:</p>
+                            <div class="contact-info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h4>Head Office</h4>
+                                    <p>123 Financial Avenue, Suite 500<br>Global Trade Center, New York, NY 10001, USA</p>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <h4>Phone Support</h4>
+                                    <p>Client Services: +1 (800) 555-FXFX (3939)</p>
+                                    <p>Technical Support: +1 (800) 555-TECH (8324)</p>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h4>Email Support</h4>
+                                    <p>General Inquiries: info@alphafxinvest.com</p>
+                                    <p>Support: support@alphafxinvest.com</p>
+                                    <p>Partnerships: partners@alphafxinvest.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h4>Office Hours</h4>
+                                    <p>Client Support: 24 hours, Monday - Friday</p>
+                                    <p>Office Visits: Monday - Friday, 9:00 AM - 5:00 PM (Local Time)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <p>Map loading... If it doesn't appear, please ensure you have a stable internet connection.</p>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.142293735017!2d-73.98785368459245!3d40.75889497932688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sng!4v1653000000000!5m2!1sen!2sng"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section id="login-section" class="page-section">
+            <div class="page-header-section">
+                <div class="container">
+                    <h1>Client Login</h1>
+                    <p>Access your AlphaFX Invest trading account.</p>
+                </div>
+            </div>
+            <section class="login-content section-padding">
+                <div class="container">
+                    <div class="auth-form-container">
+                        <h3>Welcome Back</h3>
+                        <form class="auth-form" id="loginForm">
+                            <div class="form-group">
+                                <label for="login-email">Email Address</label>
+                                <input type="email" id="login-email" name="email" required placeholder="you@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="login-password">Password</label>
+                                <input type="password" id="login-password" name="password" required placeholder="Enter your password">
+                            </div>
+                            <div class="form-group" style="display: flex; justify-content: space-between; align-items: center;">
+                                <label style="margin-bottom: 0;">
+                                    <input type="checkbox" name="remember_me" style="width: auto; margin-right: 5px;"> Remember Me
+                                </label>
+                                <a href="#" style="font-size: 0.9rem;">Forgot Password?</a>
+                            </div>
+                            <button type="submit" class="btn btn-gold">Login</button>
+                            <p class="form-text">Don't have an account? <a href="#" data-targetpage="register-section" class="nav-link">Sign Up Now</a></p>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section id="register-section" class="page-section">
+            <div class="page-header-section">
+                <div class="container">
+                    <h1>Open a Trading Account</h1>
+                    <p>Join AlphaFX Invest and start your trading journey today.</p>
+                </div>
+            </div>
+            <section class="register-content section-padding">
+                <div class="container">
+                    <div class="auth-form-container">
+                        <h3>Create Your Account</h3>
+                        <form class="auth-form" id="registerForm">
+                            <div class="form-group">
+                                <label for="register-fullname">Full Name</label>
+                                <input type="text" id="register-fullname" name="fullname" required placeholder="e.g., Jane Smith">
+                            </div>
+                            <div class="form-group">
+                                <label for="register-email">Email Address</label>
+                                <input type="email" id="register-email" name="email" required placeholder="you@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="register-phone">Phone Number</label>
+                                <input type="tel" id="register-phone" name="phone" required placeholder="e.g., +1 234 567 8900">
+                            </div>
+                            <div class="form-group">
+                                <label for="register-country">Country of Residence</label>
+                                <select id="register-country" name="country" required>
+                                    <option value="">Select Country...</option>
+                                    <option value="US">United States</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="GB">United Kingdom</option>
+                                    <option value="AU">Australia</option>
+                                    <option value="NG">Nigeria</option>
+                                    {/* Add more countries as needed */}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="register-password">Password</label>
+                                <input type="password" id="register-password" name="password" required placeholder="Create a strong password">
+                            </div>
+                            <div class="form-group">
+                                <label for="register-confirm-password">Confirm Password</label>
+                                <input type="password" id="register-confirm-password" name="confirm_password" required placeholder="Confirm your password">
+                            </div>
+                            <div class="form-group">
+                                <label style="display: flex; align-items: center;">
+                                    <input type="checkbox" name="agree_terms" required style="width: auto; margin-right: 10px;">
+                                    I agree to the <a href="#" target="_blank" style="margin-left: 5px;">Terms & Conditions</a> and <a href="#" target="_blank" style="margin-left: 5px;">Privacy Policy</a>.
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-gold">Create Account</button>
+                            <p class="form-text">Already have an account? <a href="#" data-targetpage="login-section" class="nav-link">Login Here</a></p>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h5>AlphaFX Invest</h5>
+                    <p>Empowering traders with advanced technology and expert support to navigate the global Forex markets successfully.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h5>Trading</h5>
+                    <ul>
+                        <li><a href="#" data-targetpage="services-section" class="nav-link">Account Types</a></li>
+                        <li><a href="#" data-targetpage="services-section" class="nav-link">Trading Platforms</a></li>
+                        <li><a href="#">Instruments</a></li>
+                        <li><a href="#">Deposits & Withdrawals</a></li>
+                        <li><a href="#">Trading Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#" data-targetpage="about-section" class="nav-link">About Us</a></li>
+                        <li><a href="#">Regulation</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#" data-targetpage="contact-section" class="nav-link">Contact Us</a></li>
+                        <li><a href="#">Press Room</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5>Resources</h5>
+                    <ul>
+                        <li><a href="#" data-targetpage="education-section" class="nav-link">Forex Education</a></li>
+                        <li><a href="#">Market Analysis</a></li>
+                        <li><a href="#">Economic Calendar</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Glossary</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="risk-disclaimer">
+                <p><strong>Risk Warning:</strong> Trading Forex and CFDs involves a high level of risk and may not be suitable for all investors. The high degree of leverage can work against you as well as for you. Before deciding to trade Forex or CFDs,
+                    you should carefully consider your investment objectives, level of experience, and risk appetite. There is a possibility that you may sustain a loss of some or all of your initial investment and therefore you should not invest money
+                    that you cannot afford to lose. You should be aware of all the risks associated with Forex and CFD trading and seek advice from an independent financial advisor if you have any doubts. AlphaFX Invest does not provide investment advice.</p>
+            </div>
+            <div class="footer-bottom">
+                <p>© <span id="currentYear"></span> AlphaFX Invest. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pageSections = document.querySelectorAll('.page-section');
+            const navLinks = document.querySelectorAll('.nav-link'); // Includes header, footer, and in-page links
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+
+            // --- Page Switching Logic ---
+            function showPage(targetPageId) {
+                pageSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                const targetPage = document.getElementById(targetPageId);
+                if (targetPage) {
+                    targetPage.classList.add('active');
+                    window.scrollTo(0, 0); // Scroll to top of new page
+                } else {
+                    console.warn("Target page not found:", targetPageId, "Defaulting to home.");
+                    document.getElementById('home-section').classList.add('active'); // Default to home if target not found
+                }
+
+                // Update active nav link in header
+                const headerNavLinks = document.querySelector('.main-nav').querySelectorAll('.nav-link'); // Be specific to header nav
+                headerNavLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.targetpage === targetPageId) {
+                        link.classList.add('active');
+                    }
+                });
+                // If the target is login or register, also deactivate other main nav items
+                if (targetPageId === 'login-section' || targetPageId === 'register-section') {
+                    headerNavLinks.forEach(link => {
+                        if (link.dataset.targetpage !== 'login-section' && link.dataset.targetpage !== 'register-section') {
+                            // No need to remove active here, the above loop handles it.
+                            // Just ensure only the login/register specific header links (if any) would be active.
+                            // For this setup, login/register are not main nav items, so all main nav items should be inactive.
+                            if (link.dataset.targetpage !== 'home-section' && link.dataset.targetpage !== 'about-section' && link.dataset.targetpage !== 'services-section' && link.dataset.targetpage !== 'education-section' && link.dataset.targetpage !== 'contact-section') {
+                                // This condition is a bit redundant given the loop structure,
+                                // but ensures only main nav items are considered for deactivation.
+                            }
+                        }
+                    });
+                }
+
+
+                // Close mobile menu if open
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetPageId = link.dataset.targetpage;
+                    if (targetPageId) {
+                        showPage(targetPageId);
+                    }
+                });
+            });
+
+            // --- Mobile Menu Toggle ---
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', () => {
+                    mainNav.classList.toggle('active');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        if (mainNav.classList.contains('active')) {
+                            icon.classList.remove('fa-bars');
+                            icon.classList.add('fa-times');
+                        } else {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                });
+            }
+
+            // --- Form Submission Handling (Generic for demo) ---
+            const allForms = document.querySelectorAll('form');
+            allForms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    let isValid = true;
+                    const requiredInputs = form.querySelectorAll('[required]');
+                    requiredInputs.forEach(input => {
+                        if (input.type === 'checkbox') {
+                            if (!input.checked) {
+                                isValid = false;
+                                // You might want to highlight the checkbox label or add a message
+                                console.warn("Checkbox not checked:", input.name);
+                            }
+                        } else if (!input.value.trim()) {
+                            isValid = false;
+                            input.style.borderColor = 'var(--danger-color)';
+                        } else {
+                            input.style.borderColor = 'var(--border-color)';
+                        }
+                    });
+
+                    if (isValid) {
+                        alert('Thank you for your submission! (This is a demo and data is not actually sent)');
+                        form.reset();
+                        requiredInputs.forEach(input => {
+                            if (input.type !== 'checkbox') input.style.borderColor = 'var(--border-color)';
+                        });
+                    } else {
+                        alert('Please fill in all required fields and agree to the terms.');
+                    }
+                });
+            });
+
+            // --- Update Footer Year ---
+            const currentYearSpan = document.getElementById('currentYear');
+            if (currentYearSpan) {
+                currentYearSpan.textContent = new Date().getFullYear();
+            }
+
+            // --- Initial Page Load ---
+            let initialPage = 'home-section';
+            if (window.location.hash) {
+                const hashPage = window.location.hash.substring(1);
+                if (document.getElementById(hashPage)) {
+                    initialPage = hashPage;
+                }
+            }
+            showPage(initialPage);
+
+        });
+    </script>
+</body>
+
+</html>
